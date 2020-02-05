@@ -1,0 +1,19 @@
+<div>
+    <h3>2 - Products</h3>
+    <div>
+        <p><b>Lists of products</b></p>
+        <div>
+            <p *ngFor="let product of products">{{product}}</p>
+        </div>
+        <p><b>Add a product</b></p>
+        <div>
+            <input type="text" *ngIf ="!isDisable" [(ngModel)] = "nameProduct"/>
+            <button (click) = "onAddProduct()">Add Product</button>
+            <p>Number of product : {{ numberProduct }}</p>
+        </div>
+        <div>
+            <app-product *ngFor="let product of products" [nameProduct]="product"></app-product>
+        </div>
+    </div>
+    
+</div>
